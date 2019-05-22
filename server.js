@@ -1,5 +1,11 @@
-var express = require("express");
+const express = require("express");
 var path = require("path");
+// Friends data array
+const friends = require("./app/data/friends.js");
+// Routes
+const apiRoutes = require("./app/routing/apiRoutes.js")
+const htmlRoutes = require("./app/routing/htmlRoutes.js")
+
 
 const app = express();
 const PORT = process.env.PORT || 8080;
