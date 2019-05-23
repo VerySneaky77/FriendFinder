@@ -1,9 +1,4 @@
-// Displays all friends
-app.get("/api/friends", function(req, res) {
-    return res.json(friends);
-  });
-
-
-app.post("/api/friends", function(req, res) {
-    // TODO : Handle survey results
-  });
+// Friends api getter
+module.exports.apiKeyGet = "/api/friends";
+// Friends api getter
+module.exports.apiKeyPost = "/api/friends";

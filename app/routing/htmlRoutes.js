@@ -1,7 +1,7 @@
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/survey.html"));
-});
+module.exports.getRouteSurvey = "/survey";
 
-app.get("*", function(req, res) {
-    res.redirect(path.join(__dirname, "../public/home.html"));
-})
+module.exports.getRouteIndex = "/";
+
+module.exports.redirectIndex = function (req, res) {
+    res.redirect('/');
+};
