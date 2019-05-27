@@ -30,11 +30,7 @@ app.post(apiKeyPost, function(req, res) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //    ROUTES
 //////////////////////////////////////////////////////////////////////////////////////////////////
-app.get(htmlSurveyGet, function (req, res) {
-    res.sendFile(path.join(__dirname, "app/public/survey.html"));
-    console.log(path.join(__dirname));
-
-});
+app.get("/", htmlSurveyGet);
 
 app.get("/survey", htmlIndexGet);
 
