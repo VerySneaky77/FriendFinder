@@ -1,12 +1,7 @@
 const express = require("express");
-var path = require("path");
 // Routes
-const apiRoutes = require("./app/routing/apiRoutes")
-const htmlRoutes = require("./app/routing/htmlRoutes")
-const apiKeyGet = apiRoutes.apiKeyGet;
-const apiKeyPost = apiRoutes.apiKeyPost;
-const htmlIndexGet = htmlRoutes.getIndex;
-const htmlSurveyGet = htmlRoutes.getRouteSurvey;
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -18,20 +13,8 @@ app.use(express.json());
 app.listen(PORT, () => console.log(`App listening on ${PORT}`));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-//    FRIENDS API
+//    LISTENER
 //////////////////////////////////////////////////////////////////////////////////////////////////
-app.get(apiKeyGet, function(req, res) {
-    return res.json(friends);
-  });
-app.post(apiKeyPost, function(req, res) {
-    // TODO : Handle survey results
-  });
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//    ROUTES
-//////////////////////////////////////////////////////////////////////////////////////////////////
-app.get("/", htmlSurveyGet);
-
-app.get("/survey", htmlIndexGet);
-
-app.get("/*", htmlRoutes.redirectIndex);
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});
