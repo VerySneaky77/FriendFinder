@@ -19,19 +19,19 @@ module.exports = function (app) {
         let userData = req.body;
         let userScores = userData.scores;
         // User-friend difference
-        let scoreDifference;
+        let totalDifference;
 
         // Friend user list loop
         for (let i = 0; i < friends.length; i++) {
             let currentFriend = friends[i];
-            scoreDifference = 0;
+            totalDifference = 0;
 
             // Scores for friends
             for (let k = 0; k < currentFriend.scores.length; k++) {
                 let currentFriendScore = currentFriend.scores[k];
                 let currentUserScore = userScores[k];
 
-                scoreDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+                totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
             }
 
             // Update best match on lower difference score
