@@ -1,5 +1,5 @@
 // Data source
-const friends = require("../data/friends");
+let friends = require("../data/friends.js");
 //
 module.exports = function (app) {
     // Friends api get
@@ -8,7 +8,7 @@ module.exports = function (app) {
     });
 
     // Friends api post
-    app.post("/api/friends", (req, res) => {
+    app.post("/api/friends", function(req, res) {
         // User with the closest match to visitor responses
         // Req.body is coming back as undefined
         console.log(req.body);
@@ -34,17 +34,17 @@ module.exports = function (app) {
                 let currentFriendScore = currentFriend.scores[k];
                 let currentUserScore = userScores[k];
 
-                totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+                match.friendDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
             }
 
             // Update best match on lower difference score
-            if (scoreDifference <= bestMatch.friendDifference) {
+            if (totalDifference <= match.friendDifference) {
                 match.name = currentFriend.name;
                 match.photo = currentFriend.photo;
                 match.friendDifference = totalDifference;
             }
         }
-
+        console.log(friends);
         friends.push(userData);
         res.json(match);
     });

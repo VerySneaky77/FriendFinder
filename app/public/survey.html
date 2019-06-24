@@ -13,11 +13,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="jumbotron bg-primary">Survey</h1>
-        <br>
-        <br>
+    <header class="jumbotron bg-primary">
+        <h1>Survey</h1>
+    </header>
+    <br>
+    <br>
 
+    <div class="container">
         <h2><strong>About You</strong></h2>
         <h4>Name (Required)</h4>
         <input type="text" id="name" class="form-control" required>
@@ -152,11 +154,14 @@
             <button type="submit" class="col-2 btn btn-primary btn-lg btn-block" id="submit">Submit</button>
         </div>
     </div>
+    <br>
+    <br>
     <!-- Results -->
     <div id="results" class="container d-none">
         <header>
             <h2><strong>Best Match</strong></h2>
         </header>
+        <br>
         <h2 id="match-name"></h2>
         <img id="match-img" class="img-fluid" src="" alt="">
     </div>
@@ -171,39 +176,42 @@
                 let isValid = true;
                 $(".form-control").each(function () {
                     if ($(this).val() === "") {
-                        return false;
+                        isValid = false;
                     }
                 });
                 $(".chosen-select").each(function () {
                     if ($(this).val() === "") {
-                        return false;
+                        isValid = false;
                     }
                 });
-                return true;
+                return isValid;
             }
 
             // Fill out user data object
             if (validateForm()) {
                 var userData = {
-                    name: $("#name").val().trim(),
-                    photo: $("#photo").val().trim(),
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
                     scores: [
-                        $("#q1").val().trim(),
-                        $("#q2").val().trim(),
-                        $("#q3").val().trim(),
-                        $("#q4").val().trim(),
-                        $("#q5").val().trim(),
-                        $("#q6").val().trim(),
-                        $("#q7").val().trim(),
-                        $("#q8").val().trim(),
-                        $("#q9").val().trim(),
-                        $("#q10").val().trim()
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
                     ]
                 };
+                console.log(userData);
                 // AJAX post the data to the friends API.
-                $.post("/api/friends", userData, data => {
+                $.post("/api/friends", userData, function (data) {
+                    console.log(data);
                     $("#match-name").text(data.name);
                     $("#match-img").attr("src", data.photo);
+                    $("#match-img").attr("alt", data.name);
                     // Show the results html
                     $("#results").removeClass("d-none");
                 });
