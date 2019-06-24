@@ -2,19 +2,20 @@
 const friends = require("../data/friends");
 //
 module.exports = function (app) {
-    // Friends api getter
+    // Friends api get
     app.get("/api/friends", function (req, res) {
         res.json(friends);
     });
-    // Friends api poster
-    app.post("/api/friends", function (req, res) {
+
+    // Friends api post
+    app.post("/api/friends", (req, res) => {
         // User with the closest match to visitor responses
-        let bestMatch = {
+        console.log(req.body);
+        let match = {
             name: "",
             photo: "",
-            friendDifference
+            friendDifference: 0
         }
-
         // User data from survey
         let userData = req.body;
         let userScores = userData.scores;
@@ -36,13 +37,13 @@ module.exports = function (app) {
 
             // Update best match on lower difference score
             if (scoreDifference <= bestMatch.friendDifference) {
-                bestMatch.name = currentFriend.name;
-                bestMatch.photo = currentFriend.photo;
-                bestMatch.friendDifference = totalDifference;
+                match.name = currentFriend.name;
+                match.photo = currentFriend.photo;
+                match.friendDifference = totalDifference;
             }
         }
 
         friends.push(userData);
-        res.json(bestMatch);
+        res.json(match);
     });
 }

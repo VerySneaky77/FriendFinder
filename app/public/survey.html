@@ -5,93 +5,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Friend Finder: Survey</title>
 </head>
 
 <body>
     <div class="container">
-    <h1 class="jumbotron">Survey</h1>
-    <br>
-    <br>
+        <h1 class="jumbotron bg-primary">Survey</h1>
+        <br>
+        <br>
 
-    <h2><strong>About You</strong></h2>
-    <h4>Name (Required)</h4>
-    <input type="text" id="name" class="form-control" required>
+        <h2><strong>About You</strong></h2>
+        <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required>
+        <br>
+        <h2>Link to Photo Image (Required)</h2>
+        <input type="text" id="photo" class="form-control" required>
+        <br>
+        <br>
 
-    <h2>Link to Photo Image (Required)</h2>
-    <input type="text" id="photo" class="form-control" required>
-    <br>
-    <br>
-
-    <!-- Survey provided by the sample -->
-    <h2><strong>Question 1</strong></h2>
-    <h4>You prefer spending free time at home or a familiar place.</h4>
-    <select class="chosen-select" id="q1">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <br>
-    <br>
-    <h2><strong>Question 2</strong></h2>
-    <h4>You prefer watching a movie when you want to be entertained.</h4>
-    <select class="chosen-select" id="q2">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <br>
-    <br>
-    <h2><strong>Question 3</strong></h2>
-    <h4>You enjoy traveling to new places.</h4>
-    <select class="chosen-select" id="q3">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <br>
-    <br>
-    <h2><strong>Question 4</strong></h2>
-    <h4>You prefer working with a plan.</h4>
-    <select class="chosen-select" id="q4">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <br>
-    <br>
-    <h2><strong>Question 5</strong></h2>
-    <h4>You enjoy the beach.</h4>
-    <select class="chosen-select" id="q5">
-      <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-
+        <!-- Survey provided by the sample -->
+        <h2><strong>Question 1</strong></h2>
+        <h4>You prefer spending free time at home or a familiar place.</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 2</strong></h2>
+        <h4>You prefer watching a movie when you want to be entertained.</h4>
+        <select class="chosen-select" id="q2">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 3</strong></h2>
+        <h4>You enjoy traveling to new places.</h4>
+        <select class="chosen-select" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 4</strong></h2>
+        <h4>You prefer working with a plan.</h4>
+        <select class="chosen-select" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 5</strong></h2>
+        <h4>You enjoy the beach.</h4>
+        <select class="chosen-select" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 6</strong></h2>
+        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <select class="chosen-select" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 7</strong></h2>
+        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <select class="chosen-select" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 8</strong></h2>
+        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <select class="chosen-select" id="q8">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 9</strong></h2>
+        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <select class="chosen-select" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <h2><strong>Question 10</strong></h2>
+        <h4>You feel more energetic after spending time with a group of people.</h4>
+        <select class="chosen-select" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <div class="row">
+            <button type="submit" class="col-2 btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+        </div>
+    </div>
+    <!-- Results -->
+    <div id="results" class="container d-none">
+        <header>
+            <h2><strong>Best Match</strong></h2>
+        </header>
+        <h2 id="match-name"></h2>
+        <img id="match-img" class="img-fluid" src="" alt="">
+    </div>
 
     <script type="text/javascript">
         // Capture the form inputs
         $("#submit").on("click", function (event) {
             event.preventDefault();
 
+            // Form validation
+            function validateForm() {
+                let isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        return false;
+                    }
+                });
+                $(".chosen-select").each(function () {
+                    if ($(this).val() === "") {
+                        return false;
+                    }
+                });
+                return true;
+            }
 
+            // Fill out user data object
+            if (validateForm()) {
+                var userData = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val().trim(),
+                        $("#q2").val().trim(),
+                        $("#q3").val().trim(),
+                        $("#q4").val().trim(),
+                        $("#q5").val().trim(),
+                        $("#q6").val().trim(),
+                        $("#q7").val().trim(),
+                        $("#q8").val().trim(),
+                        $("#q9").val().trim(),
+                        $("#q10").val().trim()
+                    ]
+                };
+                // AJAX post the data to the friends API.
+                $.post("/api/friends", userData, data => {
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+                    // Show the results html
+                    $("#results").removeClass("d-none");
+                });
+            } else { alert("Please fill out all fields before submitting!"); }
         });
-
     </script>
 </body>
 
