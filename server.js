@@ -1,9 +1,9 @@
 const express = require("express");
+const app = express();
 // Routes
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
