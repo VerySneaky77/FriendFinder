@@ -10,7 +10,9 @@ module.exports = function (app) {
     // Friends api post
     app.post("/api/friends", (req, res) => {
         // User with the closest match to visitor responses
+        // Req.body is coming back as undefined
         console.log(req.body);
+        // ====================================
         let match = {
             name: "",
             photo: "",
